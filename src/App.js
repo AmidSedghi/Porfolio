@@ -14,20 +14,23 @@ class App extends Component {
     super(); 
     this.state = {
       children: [
-        {childVisible: true},
-        {childVisible: true},
-        {childVisible: true}
+        {childVisible: false},
+        {childVisible: false},
+        {childVisible: false}
       ]
-     
     }
   }
 
   onClick(i) {
-    // I cant' figure out this part. I'm trying to set each 
-    // array element a boolean value to manipulated the show/hide of text
-    // when the user clicks on an image
+    /* You cannot access children's values directly. That is why you need
+    ** recreate the children and change the childVisible value in the copy
+    ** and then reassign the whole array of element to children using
+    ** setState()
+    */
+    const items = this.state.children;
+    items[i].childVisible = !this.state.children[i].childVisible
     this.setState({
-      childVisible : !this.state.children[i].childVisible
+      items
     });
   }
 
@@ -48,9 +51,7 @@ class App extends Component {
           <ul>
               <li> WebApp To Do List </li>
               <img src={logo} alt="1st" onClick={() => this.onClick(0)}/>
-              {console.log(this.state.children[0].childVisible)}
               {
-                  
                   this.state.children[0].childVisible
                   ? <p> This app was build on React.js. I have recently picked up React so this was my first
                   playing around project that uses a simple clock object and a input that creates an array
