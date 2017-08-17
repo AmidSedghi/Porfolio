@@ -28,16 +28,44 @@
   font-size: large;
 }
 
-.Projects ul{ 
-  list-style: none; 
+.Projects ul li{ 
+  list-style: none;
+  font-size: 20px; 
+  text-align: center;
+}
+
+#wrapper {
+  width:1200px; 
+  background: #f55523;
+  margin:0 auto; 
+  position: relative; 
+  align-self: center;
 }
 
 .Projects img{
   animation: App-logo-spin infinite 20s linear;
   width: 100px; 
-  padding: 5px; 
+  height: 100px;
+  padding: 10px; 
 }
 
+#left_col {
+  float: left;
+  width: 300px; 
+  display: block;
+  background: red; 
+  position: relative; 
+  padding: 10px; 
+}
+
+#right_col {
+  float: left; 
+  width: 300px; 
+  display:block;
+  background: blue; 
+  position: relative;
+  padding: 10px; 
+}
 /* Spinning factor
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
