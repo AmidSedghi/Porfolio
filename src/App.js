@@ -17,7 +17,8 @@ class App extends Component {
       children: [
         {childVisible: false},
         {childVisible: false},
-        {childVisible: false}
+        {childVisible: false},
+        {childVisible: true}
       ]
     }
   }
